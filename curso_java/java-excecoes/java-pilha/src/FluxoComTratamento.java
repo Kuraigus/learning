@@ -5,7 +5,7 @@ public class FluxoComTratamento {
         try {
             metodo1();
         } catch (ArithmeticException | NullPointerException error) {
-           // System.out.println(error.getMessage());
+            // System.out.println(error.getMessage());
             error.printStackTrace();
         }
         System.out.println("Fim do main");
@@ -21,9 +21,9 @@ public class FluxoComTratamento {
         System.out.println("Ini do metodo2");
         for (int i = 1; i <= 5; i++) {
             System.out.println(i);
-            //int a = i / 0;
-            Conta c = null;
-            c.deposita();
+            // int a = i / 0;
+            // Conta c = null;
+            // c.deposita();
         }
         System.out.println("Fim do metodo2");
     }
