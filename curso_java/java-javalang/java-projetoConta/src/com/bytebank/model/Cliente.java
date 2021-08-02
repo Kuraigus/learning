@@ -1,5 +1,18 @@
 package com.bytebank.model;
 
+/**
+ * classe representando o Cliente do bytebank.
+ * 
+ * @author(autor da classe) Joao Victor
+ * @version(versao da classe) 0.1
+ * @param(parametro de metodo e construtor)
+ * @return(retorno no metodo)
+ * @exception ou @throws (exceptions e throwables no metodo ou construtor)
+ * @see(?)
+ * @since(?)
+ * @serial(?)
+ * @deprecated(?)
+ */
 public class Cliente {
 
     private String nome;
