@@ -1,6 +1,7 @@
 package com.bytebank.teste;
 
 import com.bytebank.model.*;
+import com.bytebank.model.Conta;
 
 public class TesteSaca {
     public static void main(String[] args) {
