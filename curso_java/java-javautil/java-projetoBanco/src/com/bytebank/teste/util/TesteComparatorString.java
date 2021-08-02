@@ -41,27 +41,17 @@ public class TesteComparatorString {
         lista.add(cc3);
         lista.add(cc4);
 
-        for (Conta conta : lista) {
-            System.out.println(conta + ", " + conta.getTitular().getNome());
-        }
+        lista.forEach((conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()));
 
 
-        lista.sort(new TitularDaContaComparator());
+        lista.sort((Conta c1, Conta c2) -> {
+            String nomeC1 = c1.getTitular().getNome();
+            String nomeC2 = c2.getTitular().getNome();
 
-        for (Conta conta : lista) {
-            System.out.println(conta + ", " + conta.getTitular().getNome());
-        }
+            return nomeC1.compareTo(nomeC2);
+        });
 
-    }
-}
+        lista.forEach((conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()));
 
-class TitularDaContaComparator implements Comparator<Conta> {
-
-    @Override
-    public int compare(Conta c1, Conta c2) {
-        String nomeC1 = c1.getTitular().getNome();
-        String nomeC2 = c2.getTitular().getNome();
-
-        return nomeC1.compareTo(nomeC2);
     }
 }
