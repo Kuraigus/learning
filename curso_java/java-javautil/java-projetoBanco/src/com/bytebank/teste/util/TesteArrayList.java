@@ -4,7 +4,7 @@ import com.bytebank.model.ContaCorrente;
 
 import java.util.ArrayList;
 
-public class Teste {
+public class TesteArrayList {
     public static void main(String[] args) {
         // <> = Generics especifica o tipo de objeto q vai conter na lista
         ArrayList<ContaCorrente> lista = new ArrayList<ContaCorrente>();
