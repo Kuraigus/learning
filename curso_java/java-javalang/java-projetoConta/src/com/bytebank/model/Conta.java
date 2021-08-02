@@ -73,4 +73,9 @@ public abstract class Conta {
         return Conta.total;
     }
 
+    @Override
+    public String toString() {
+        return "Numero: " + this.numero + "\nAgencia: " + this.agencia;
+    }
+
 }
