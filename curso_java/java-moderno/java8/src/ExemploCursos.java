@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 class Curso {
     private String nome;
@@ -34,5 +35,10 @@ public class ExemploCursos {
 //        cursos.forEach(c -> System.out.println(c.getNome()));
 
         cursos.stream().filter(c -> c.getAlunos() >= 100).forEach(c -> System.out.println(c.getNome()));
+
+        cursos.stream().filter(c -> c.getAlunos() >= 100).findAny()
+                .ifPresent(c -> System.out.println((c.getNome())));
+
+
     }
 }
