@@ -26,11 +26,7 @@ public class TestaCursoComAluno {
             System.out.println(a);
         });
 
-        Set<String> nomes = Collections.emptySet();
-        nomes.add("Paulo");
-
-        System.out.println(nomes);
-
+        System.out.println(javaColecoes.estaMatriculado(a1));
 
     }
 }
