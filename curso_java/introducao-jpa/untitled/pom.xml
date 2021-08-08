@@ -30,11 +30,11 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.5.5.Final</version>
+            <version>5.4.27.Final</version>
         </dependency>
 
         <dependency>
-            <groupId>org.h2database</groupId>
+            <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.200</version>
         </dependency>
