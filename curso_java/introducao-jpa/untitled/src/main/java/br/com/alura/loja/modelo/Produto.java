@@ -2,6 +2,7 @@ package br.com.alura.loja.modelo;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Produtos")
@@ -13,6 +14,17 @@ public class Produto {
     private String nome;
     private String descricao;
     private BigDecimal preco;
+    private LocalDate dataCadastro = LocalDate.now();
+
+    @ManyToOne
+    private Categoria categoria;
+
+    public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.categoria = categoria;
+    }
 
     public String getNome() {
         return nome;
@@ -30,6 +42,14 @@ public class Produto {
         return descricao;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public LocalDate getDataCadastro() {
+        return dataCadastro;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -44,5 +64,13 @@ public class Produto {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setDataCadastro(LocalDate dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 }
