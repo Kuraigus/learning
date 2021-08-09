@@ -1,7 +1,6 @@
 package br.com.alura.loja.dao;
 
 import br.com.alura.loja.modelo.Categoria;
-import br.com.alura.loja.modelo.Produto;
 
 import javax.persistence.EntityManager;
 
@@ -12,7 +11,20 @@ public class CategoriaDao {
         this.em = em;
     }
 
+    public void listar(Long id, Categoria categoria) {
+        this.em.find(categoria.getClass(), 1l);
+    }
+
     public void cadastrar(Categoria categoria) {
         this.em.persist(categoria);
+    }
+
+    public void atualizar(Categoria categoria) {
+        this.em.merge(categoria);
+    }
+
+    public void remover(Categoria categoria) {
+        categoria = em.merge(categoria);
+        this.em.remove(categoria);
     }
 }
