@@ -17,16 +17,21 @@ public class CadastroDeProduto {
     }
 
     private static void cadastrarProduto() {
-        Categoria categoria = new Categoria("CELULARES");
-        Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"));
-
-        EntityManager em = JPAUtil.getEntityManager();
-
-        em.persist(categoria);
-
-        em.getTransaction().begin();
-        em.getTransaction().commit();
-        em.close();
+    	Categoria categoria = new Categoria("CELURARES");
+		Produto celular = new Produto("Xiaomi Redmi", "Android Smarthphone", 
+				new BigDecimal("800"), categoria);
+		
+		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDao produtoDao = new ProdutoDao(em);
+		CategoriaDao categoriaDao = new CategoriaDao(em);
+	
+		em.getTransaction().begin();
+		
+		categoriaDao.cadastrar(categoria);
+		produtoDao.cadastrar(celular);
+		
+		em.getTransaction().commit();
+		em.close();
     }
 
     private static void buscarProduto() {
