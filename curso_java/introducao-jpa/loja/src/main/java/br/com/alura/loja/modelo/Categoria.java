@@ -6,22 +6,16 @@ import javax.persistence.*;
 @Table(name = "Categorias")
 public class Categoria {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-
+	@EmbeddedId
+    private CategoriaId id;
+    
     public Categoria() {}
 
-    public Categoria(String nome) {
-        this.nome = nome;
+    public Categoria(String nome, String tipo) {
+        this.id = new CategoriaId(nome, tipo);
     }
 
     public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        return id.getNome();
     }
 }
