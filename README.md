@@ -1,0 +1,1 @@
+repositorio focado em apredizados e curso realizados
